@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Give each question{% endblock %}
+
+{% block content %}
+  <h2>Question {{enumb +1}} / 4</h2>
+  <div>
+    <form action="/answer" method="POST">
+    <label>
+        {{question}}
+    </label>
+    {% for choice in choices %}
+    <input type="radio" name="choice" value={{choice}}>{{choice}}
+    {% endfor %}
+    <input type="submit">
+    </form>
+  </div>
+
+{% endblock %}
